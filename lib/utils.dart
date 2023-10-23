@@ -102,7 +102,11 @@ class FluUtils {
   static bool isAlphabetOnly(String s) => hasMatch(s, r'^[a-zA-Z]+$');
 
   /// Checks if string contains at least one Capital Letter
-  static bool hasCapitalletter(String s) => hasMatch(s, r'[A-Z]');
+  /// @deprecated Use [hasCapitalLetter] instead
+  static bool hasCapitalletter(String s) => hasCapitalLetter(s);
+
+  /// Checks if string contains at least one Capital Letter
+  static bool hasCapitalLetter(String s) => hasMatch(s, r'[A-Z]');
 
   /// Checks if string is boolean.
   static bool isBool(String value) {
@@ -252,8 +256,12 @@ class FluUtils {
   static bool isHexadecimal(String s) =>
       hasMatch(s, r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$');
 
-  /// Checks if string is Palindrom.
-  static bool isPalindrom(String string) {
+  /// Checks if string is Palindrome.
+  /// @deprecated Use [isPalindrome] instead.
+  static bool isPalindrom(String string) => isPalindrome(string);
+
+  /// Checks if string is Palindrome.
+  static bool isPalindrome(String string) {
     final cleanString = string
         .toLowerCase()
         .replaceAll(RegExp(r"\s+"), '')
